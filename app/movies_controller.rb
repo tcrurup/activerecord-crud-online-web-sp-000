@@ -25,6 +25,7 @@ end
 
 def can_be_created_in_a_block(args = {})
   # If no arguments are passed, use default values:
+  binding.pry
   DEFAULTS = {
     :title => "Home Alone",
     :release_date => 1990
