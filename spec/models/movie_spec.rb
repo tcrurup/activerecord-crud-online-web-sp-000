@@ -51,8 +51,11 @@ describe 'Movie' do
 
   context '#save' do
     it 'can be saved to the database' do
+      binding.pry
       movie = Movie.new(attributes)
+      binding.pry
       movie.save
+      binding.pry
       expect(Movie.find_by(attributes)).to eq(movie)
     end
   end
