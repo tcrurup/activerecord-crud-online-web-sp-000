@@ -25,11 +25,14 @@ end
 
 def can_be_created_in_a_block(args = {})
   # If no arguments are passed, use default values:
-  # title == "Home Alone"
-  # release_date == 1990
+  DEFAULTS = {
+    :title = "Home Alone"
+    :release_date = 1990
+  }
+  
   
   Movie.create do |m|
-    args.each do |key, value|
+    DEFAULTS.merge(args).each do |key, value|
       m.send("#{key}=", value)
     end
   end
