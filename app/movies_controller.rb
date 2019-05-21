@@ -25,7 +25,7 @@ end
 
 def can_be_created_in_a_block(args = {})
   binding.pry
-  args[:name] = "Home Alone" if args[:name].nil?
+  args[:title] = "Home Alone" if args[:title].nil?
   args[:release_date] = 1998 if args[:release_date].nil?
   
   Movie.create do |m|
