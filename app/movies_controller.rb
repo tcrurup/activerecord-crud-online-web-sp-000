@@ -24,9 +24,8 @@ def can_be_created_with_a_hash_of_attributes
 end
 
 def can_be_created_in_a_block(args = {})
-  binding.pry
   args[:title] = "Home Alone" if args[:title].nil?
-  args[:release_date] = 1998 if args[:release_date].nil?
+  args[:release_date] = 1990 if args[:release_date].nil?
   
   Movie.create do |m|
     args.each do |key, value|
