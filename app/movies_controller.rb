@@ -91,7 +91,8 @@ end
 
 def can_destroy_a_single_item
   Movie.create(title: "That One Where the Guy Kicks Another Guy Once")
-  Movie.where("title = 'That One Where the Guy Kicks Another Guy Once'").destroy
+  movie_id = Movie.where("title = 'That One Where the Guy Kicks Another Guy Once'").first.id
+  Movie.destroy(movie_id)
 end
 
 def can_destroy_all_items_at_once
