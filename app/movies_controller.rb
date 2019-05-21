@@ -24,16 +24,11 @@ def can_be_created_with_a_hash_of_attributes
 end
 
 def can_be_created_in_a_block(args = {})
-  # If no arguments are passed, use default values:
-  binding.pry
-  #DEFAULTS = {
-  #  :title => "Home Alone",
-  #  :release_date => 1990
-  #}
-  
+  args[:name] = "Home Alone" if args[:name].nil?
+  args[:release_date] = 1998 if args[:release_date].nil?
   
   Movie.create do |m|
-    DEFAULTS.merge(args).each do |key, value|
+    args.each do |key, value|
       m.send("#{key}=", value)
     end
   end
