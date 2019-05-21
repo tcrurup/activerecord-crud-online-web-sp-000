@@ -24,6 +24,7 @@ def can_be_created_with_a_hash_of_attributes
 end
 
 def can_be_created_in_a_block(args = {})
+  binding.pry
   args[:name] = "Home Alone" if args[:name].nil?
   args[:release_date] = 1998 if args[:release_date].nil?
   
