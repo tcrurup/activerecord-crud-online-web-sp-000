@@ -75,9 +75,8 @@ end
 def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat?")
-  movie_id = Movie.where(["title = 'Wat?'"]).first.id
-  binding.pry
-  Movie.update(movie_id, :title => "Wat, huh?").save
+  movie_id = Movie.where(["title = 'Wat\?'"]).first.id
+  Movie.update(movie_id, :title => "Wat, huh\?").save
 end
 
 def can_update_multiple_items_at_once
