@@ -76,6 +76,7 @@ def can_update_using_update_method
   # Update movie title to "Wat, huh?"
   Movie.create(title: "Wat?")
   movie_id = Movie.where(["title = 'Wat?'"]).first.id
+  binding.pry
   Movie.update(movie_id, :title => "Wat, huh?").save
 end
 
